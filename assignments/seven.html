@@ -1,22 +1,29 @@
+<!DOCTYPE html>
 <html>
 <body>
 
-<h2>Contact Forms</h2>
+<h2>Contact Form</h2>
 
-<form action="/action_page.php">
+<form action="action_page.php" method="post">
+  
   <label for="fname">Name:</label><br>
-   <input type="text" id="fname" Name="fname"><br><br>
-  <label for="lname">Email:</label><br>
-  <input type="text" id="fname" Email="fname"><br><br>
-    <label for="Subject">Subject:</label>
-  <select id="Subject" name="Subject">
+  <input type="text" id="fname" name="fname" required><br><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="subject">Subject:</label><br>
+  <select id="subject" name="subject">
     <option value="Job Opportunity">Job Opportunity</option>
-    <option value="Collaboration"> Freelance Collaboration</option>
+    <option value="Collaboration">Freelance Collaboration</option>
     <option value="Project">Project</option>
-    
-   
-  </select>
-    <input type="submit" value="Submit">
+  </select><br><br>
+
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+  <input type="submit" value="Send Message">
+
 </form>
   <a href="https://nikhithakamath16-cpu.github.io/sem4-fet/assignments/six.html"> 6th assignment</a>
 </body>
