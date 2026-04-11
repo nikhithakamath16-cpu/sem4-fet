@@ -1,10 +1,32 @@
-body
-{
-  background-color:lightpink;
-}
-h2
-{
-  color:blue;
-  text-align:center;
+body {
+    background-color: lightblue;
+    font-family: Arial;
 }
 
+h2 {
+    text-align: center;
+    color: darkblue;
+}
+
+ol {
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+li {
+    margin: 10px 0;
+}
+
+ul {
+    margin-top: 5px;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
