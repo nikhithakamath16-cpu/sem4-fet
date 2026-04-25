@@ -71,9 +71,16 @@
       I am improving my skills by practicing programming regularly.
     </p>
     </div>
-      <p id="demo"></p>
-     <button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Change role</button>
+     <p id="demo">Aspiring software engineer</p>
 
+<button onclick="changeRole()">Change role</button>
+
+<script>
+function changeRole() {
+  var role = prompt("Enter new role:");
+  document.getElementById("demo").innerHTML = role;
+}
+</script>
 
     <a href="https://nikhithakamath16-cpu.github.io/sem4-fet"> go to Home page</a>
 
