@@ -35,13 +35,18 @@
       padding: 15px;
       background-color: white;
     }
+
+    /* ✅ Center the button */
+    button {
+      display: block;
+      margin: auto;
+    }
   </style>
 </head>
 
 <body>
 
   <h1>Nikhitha</h1>
-
 
   <h2 id="role">Aspiring software engineer</h2>
 
@@ -59,14 +64,16 @@
 
   <br>
 
-  <div style="text-align:center;">
   <button onclick="changeRole()">Change role</button>
-</div>
+
   <script>
-    function changeRole() 
-    {
+    function changeRole() {
       var role = prompt("Enter new role:", document.getElementById("role").innerHTML);
-      document.getElementById("role").innerHTML = role;
+
+      if (role != null) {
+        document.getElementById("role").innerHTML = role;
+        alert("Role changed successfully");
+      }
     }
   </script>
 
