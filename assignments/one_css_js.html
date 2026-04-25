@@ -42,7 +42,7 @@
 
   <h1>Nikhitha</h1>
 
-  <!-- This will change -->
+
   <h2 id="role">Aspiring software engineer</h2>
 
   <h2>
@@ -62,7 +62,8 @@
   <button onclick="changeRole()">Change role</button>
 
   <script>
-    function changeRole() {
+    function changeRole() 
+    {
       var role = prompt("Enter new role:", document.getElementById("role").innerHTML);
       document.getElementById("role").innerHTML = role;
     }
