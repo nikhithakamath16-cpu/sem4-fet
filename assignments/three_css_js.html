@@ -1,10 +1,51 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Student Form</title>
     <style>
-        .error { color: red; }
-        .output { color: blue; margin-top: 15px; }
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 350px;
+            margin: 80px auto;
+            padding: 20px;
+            background: white;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        #output {
+            color: blue;
+            margin-top: 10px;
+        }
     </style>
 
     <script>
@@ -15,23 +56,23 @@
             let usn = document.getElementById("usn").value.trim();
             let email = document.getElementById("email").value.trim();
 
-            let error = "";
+            let errorMsg = "";
 
-            if (name === "" || !/^[A-Za-z ]{3,}$/.test(name)) {
-                error += "Enter a valid name<br>";
+            if (!/^[A-Za-z ]{3,}$/.test(name)) {
+                errorMsg += "Invalid Name<br>";
             }
 
-            if (usn === "" || !/^[A-Za-z0-9]{10}$/.test(usn)) {
-                error += "Enter valid USN (10 alphanumeric characters)<br>";
+            if (!/^[A-Za-z0-9]{10}$/.test(usn)) {
+                errorMsg += "Invalid USN<br>";
             }
 
-            if (email === "" || !/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
-                error += "Enter valid email<br>";
+            if (!/^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email)) {
+                errorMsg += "Invalid Email<br>";
             }
 
-            document.getElementById("error").innerHTML = error;
+            document.getElementById("error").innerHTML = errorMsg;
 
-            if (error === "") {
+            if (errorMsg === "") {
                 document.getElementById("output").innerHTML =
                     "Name: " + name + "<br>USN: " + usn + "<br>Email: " + email;
             } else {
@@ -43,23 +84,25 @@
 
 <body>
 
-<h2>Student Form</h2>
+<div class="container">
+    <h2>Student Form</h2>
 
-<form onsubmit="validateForm(event)">
-    Name:
-    <input type="text" id="name"><br><br>
+    <form onsubmit="validateForm(event)">
+        Name:
+        <input type="text" id="name"><br><br>
 
-    USN:
-    <input type="text" id="usn"><br><br>
+        USN:
+        <input type="text" id="usn"><br><br>
 
-    Email:
-    <input type="text" id="email"><br><br>
+        Email:
+        <input type="text" id="email"><br><br>
 
-    <input type="submit" value="Submit">
-</form>
+        <input type="submit" value="Submit">
+    </form>
 
-<div id="error" class="error"></div>
-<div id="output" class="output"></div>
+    <div id="error"></div>
+    <div id="output"></div>
+</div>
 
 </body>
 </html>
