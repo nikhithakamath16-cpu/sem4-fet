@@ -31,11 +31,11 @@
     </li>
 </ol>
 
-<button onclick="removeSkill()">Remove Skill</button>
+<button onclick="addSkill()">Add Skill</button>
 
 <script>
-function removeSkill() {
-    var skill = prompt("Enter skill to remove:");
+function addSkill() {
+    var skill = prompt("Enter new skill:");
 
     if (skill != null) {
 
@@ -43,32 +43,19 @@ function removeSkill() {
 
         if (skill.trim() === "") {
             alert("Skill cannot be empty");
-            return;
-        }
-
-        if (!pattern.test(skill)) {
+        } 
+        else if (!pattern.test(skill)) {
             alert("Invalid input! Only alphabets are allowed.");
-            return;
+        } 
+        else {
+            // Adding to Programming Languages by default
+            var ul = document.getElementById("prog");
+            var li = document.createElement("li");
+            li.textContent = skill;
+            ul.appendChild(li);
+
+            alert("Skill added successfully");
         }
-
-        var found = false;
-
-        var lists = ["prog", "web", "db"];
-
-        for (var i = 0; i < lists.length; i++) {
-            var ul = document.getElementById(lists[i]);
-            var items = ul.getElementsByTagName("li");
-
-            for (var j = 0; j < items.length; j++) {
-                if (items[j].textContent.toLowerCase() === skill.toLowerCase()) {
-                    ul.removeChild(items[j]);
-                    alert("Skill removed successfully");
-                    return;
-                }
-            }
-        }
-
-        alert("Skill not found");
     }
 }
 </script>
