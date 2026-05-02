@@ -1,15 +1,17 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>My Skills Matrix</title>
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <h2>My Skills Matrix</h2>
 
 <ol>
     <li>Programming Languages
-        <ul>
+        <ul id="prog">
             <li>Java</li>
             <li>C</li>
             <li>Python</li>
@@ -17,18 +19,61 @@
     </li>
 
     <li>Web Development
-        <ul>
+        <ul id="web">
             <li>HTML</li>
         </ul>
     </li>
 
     <li>Database
-        <ul>
+        <ul id="db">
             <li>MySQL (Basic)</li>
         </ul>
     </li>
 </ol>
-<a href="https://nikhithakamath16-cpu.github.io/sem4-fet"> go to Home page</a>
+
+<button onclick="removeSkill()">Remove Skill</button>
+
+<script>
+function removeSkill() {
+    var skill = prompt("Enter skill to remove:");
+
+    if (skill != null) {
+
+        var pattern = /^[A-Za-z ]+$/;
+
+        if (skill.trim() === "") {
+            alert("Skill cannot be empty");
+            return;
+        }
+
+        if (!pattern.test(skill)) {
+            alert("Invalid input! Only alphabets are allowed.");
+            return;
+        }
+
+        var found = false;
+
+        var lists = ["prog", "web", "db"];
+
+        for (var i = 0; i < lists.length; i++) {
+            var ul = document.getElementById(lists[i]);
+            var items = ul.getElementsByTagName("li");
+
+            for (var j = 0; j < items.length; j++) {
+                if (items[j].textContent.toLowerCase() === skill.toLowerCase()) {
+                    ul.removeChild(items[j]);
+                    alert("Skill removed successfully");
+                    return;
+                }
+            }
+        }
+
+        alert("Skill not found");
+    }
+}
+</script>
+
+<a href="https://nikhithakamath16-cpu.github.io/sem4-fet">Go to Home page</a>
 
 </body>
 </html>
