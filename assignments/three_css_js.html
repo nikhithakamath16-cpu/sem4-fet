@@ -28,6 +28,10 @@
             margin-top: 5px;
         }
 
+        input[type="checkbox"]{
+            width:auto;
+        }
+
         input[type="submit"] {
             background-color: #4CAF50;
             color: blue;
@@ -45,6 +49,10 @@
             color: tomato;
             margin-top: 10px;
         }
+
+        .branch label{
+            display:block;
+        }
     </style>
 
     <script>
@@ -54,7 +62,10 @@
             let name = document.getElementById("name").value.trim();
             let usn = document.getElementById("usn").value.trim();
             let email = document.getElementById("email").value.trim();
-            let branch = document.getElementById("branch").value.trim();
+
+            let branch = [];
+            document.querySelectorAll('input[name="branch"]:checked')
+                .forEach((c) => branch.push(c.value));
 
             let errorMsg = "";
 
@@ -70,8 +81,8 @@
                 errorMsg += "Invalid Email<br>";
             }
 
-            if (branch === "") {
-                errorMsg += "Branch is required<br>";
+            if (branch.length === 0) {
+                errorMsg += "Select Branch<br>";
             }
 
             document.getElementById("error").innerHTML = errorMsg;
@@ -81,7 +92,7 @@
                     "Name: " + name +
                     "<br>USN: " + usn +
                     "<br>Email: " + email +
-                    "<br>Branch: " + branch;
+                    "<br>Branch: " + branch.join(", ");
             } else {
                 document.getElementById("output").innerHTML = "";
             }
@@ -104,8 +115,13 @@
         Email:
         <input type="text" id="email"><br><br>
 
-        Branch:
-        <input type="text" id="branch"><br><br>
+        Branch:<br>
+        <div class="branch">
+            <label><input type="checkbox" name="branch" value="CSE"> CSE</label>
+            <label><input type="checkbox" name="branch" value="ECE"> ECE</label>
+            <label><input type="checkbox" name="branch" value="ME"> ME</label>
+            <label><input type="checkbox" name="branch" value="Civil"> Civil</label>
+        </div>
 
         <input type="submit" value="Submit">
     </form>
