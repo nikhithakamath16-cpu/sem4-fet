@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+  width:200px;
+  height:200px;
+  margin:auto;
+  margin-top:100px;
+  background:red;
+  border-radius:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:24px;
+  font-weight:bold;
+  color:black;
+}
+
+button{
+  margin:10px;
+  padding:10px 15px;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.red{background:crimson;}
+.green{background:seagreen;}
+.blue{background:royalblue;}
+.pink{background:hotpink;}
+</style>
+</head>
+
+<body>
+
+<div id="box" class="box">red</div>
+
+<div style="text-align:center;">
+
+<button class="red" onclick="change('red')">Red</button>
+<button class="green" onclick="change('green')">Green</button>
+<button class="blue" onclick="change('blue')">Blue</button>
+<button class="pink" onclick="change('pink')">Pink</button>
+
+</div>
+
+<script>
+function change(color){
+  let box = document.getElementById("box");
+  box.style.background = color;
+  box.innerText = color;
+}
+</script>
+
+</body>
+</html>
