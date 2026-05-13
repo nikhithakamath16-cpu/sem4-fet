@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Student Course Selection</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:linear-gradient(to right,#74ebd5,#ACB6E5);
+    text-align:center;
+    margin-top:60px;
+}
+
+.container{
+    width:420px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 4px 12px gray;
+}
+
+h2{
+    color:#333;
+    margin-bottom:25px;
+}
+
+.box{
+    width:280px;
+    height:140px;
+    margin:auto;
+    margin-bottom:25px;
+    border-radius:12px;
+    background:royalblue;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    font-weight:bold;
+    transition:0.5s;
+}
+
+select{
+    width:250px;
+    padding:10px;
+    margin:12px;
+    font-size:17px;
+    border-radius:8px;
+    border:1px solid gray;
+    outline:none;
+}
+
+label{
+    font-size:18px;
+    font-weight:bold;
+    color:#444;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Course Selection System</h2>
+
+<div id="box" class="box">
+    Select Option
+</div>
+
+<label>Select Department</label>
+<br>
+
+<select id="department">
+
+    <option value="Computer Science">
+        Computer Science
+    </option>
+
+    <option value="Mechanical">
+        Mechanical
+    </option>
+
+    <option value="Civil">
+        Civil
+    </option>
+
+    <option value="Electronics">
+        Electronics
+    </option>
+
+</select>
+
+<br>
+
+<label>Select Year</label>
+<br>
+
+<select id="year" size="4">
+
+    <option>1st Year</option>
+
+    <option>2nd Year</option>
+
+    <option>3rd Year</option>
+
+    <option>4th Year</option>
+
+</select>
+
+</div>
+
+<script>
+
+let dept = document.getElementById("department");
+
+dept.addEventListener("change", function(){
+
+    let value = dept.value;
+
+    let box = document.getElementById("box");
+
+    box.innerHTML = value;
+
+    box.style.background = "seagreen";
+
+});
+
+let year = document.getElementById("year");
+
+year.addEventListener("change", function(){
+
+    let value = year.value;
+
+    let box = document.getElementById("box");
+
+    box.innerHTML = value;
+
+    box.style.background = "crimson";
+
+});
+
+</script>
+
+</body>
+</html>
