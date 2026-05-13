@@ -1,41 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <style>
-.box{
-  width:150px;
-  height:150px;
-  position:absolute;
+
+.container{
+  position:relative;
+  width:500px;
+  height:350px;
+  margin:auto;
+  margin-top:60px;
 }
 
-#red{
-  background:red;
-  top:50px;
-  left:50px;
+/* Common box style */
+.box{
+  width:180px;
+  height:180px;
+  border-radius:10px;
+  position:absolute;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:24px;
+  font-weight:bold;
+  color:white;
+}
+
+/* Boxes */
+.red{
+  background:crimson;
+  left:20px;
+  top:20px;
   z-index:1;
 }
 
-#green{
-  background:green;
+.blue{
+  background:royalblue;
+  left:120px;
   top:80px;
-  left:80px;
   z-index:2;
 }
 
-#blue{
-  background:blue;
-  top:110px;
-  left:110px;
+.green{
+  background:seagreen;
+  left:220px;
+  top:140px;
   z-index:3;
 }
+
+/* Buttons */
+button{
+  margin:10px;
+  padding:10px 15px;
+  border:none;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.btn-red{
+  background:crimson;
+}
+
+.btn-blue{
+  background:royalblue;
+}
+
+.btn-green{
+  background:seagreen;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div id="red" class="box"></div>
-<div id="green" class="box"></div>
-<div id="blue" class="box"></div>
+<div class="container">
+
+  <div id="redBox" class="box red">
+    RED
+  </div>
+
+  <div id="blueBox" class="box blue">
+    BLUE
+  </div>
+
+  <div id="greenBox" class="box green">
+    GREEN
+  </div>
+
+</div>
+
+<div style="text-align:center;">
+
+<button class="btn-red" onclick="front('redBox')">
+Red Front
+</button>
+
+<button class="btn-blue" onclick="front('blueBox')">
+Blue Front
+</button>
+
+<button class="btn-green" onclick="front('greenBox')">
+Green Front
+</button>
+
+</div>
+
+<script>
+
+let z = 4;
+
+function front(id){
+
+  document.getElementById(id).style.zIndex = z;
+
+  z++;
+
+}
+
+</script>
 
 </body>
 </html>
+
