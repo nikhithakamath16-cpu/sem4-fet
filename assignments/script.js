@@ -1,30 +1,48 @@
-function checkPassword() {
+function registerCourse(){
 
-    let password = "";
-    let attempts = 0;
+    let courses = [];
+    let choice;
+    let count = 1;
 
-    do {
+    do{
 
-        password = prompt("Enter Password:");
-        attempts++;
+        choice = prompt(
+            "Enter Course " + count +
+            "\nType stop to finish"
+        );
 
-    } while(password !== "admin123" && attempts < 3);
+        if(choice != null &&
+           choice.trim() !== "" &&
+           choice.toLowerCase() !== "stop"){
 
-    let text = "";
+            courses.push(choice);
+            count++;
+        }
 
-    while(attempts > 0) {
+    }while(choice !== null &&
+           choice.toLowerCase() !== "stop");
 
-        text += "Attempt " + attempts + "<br>";
-        attempts--;
+    let i = 0;
+
+    let result =
+        "<h3>Registered Courses</h3>";
+
+    while(i < courses.length){
+
+        result +=
+            "Course " + (i+1) +
+            ": " + courses[i] + "<br>";
+
+        i++;
+    }
+
+    if(courses.length === 0){
+
+        result =
+            "No Courses Registered";
 
     }
 
-    if(password === "admin123") {
-        text += "Login Successful";
-    }
-    else {
-        text += "Access Denied";
-    }
-
-    document.getElementById("result").innerHTML = text;
+    document.getElementById("output").innerHTML =
+        result;
 }
