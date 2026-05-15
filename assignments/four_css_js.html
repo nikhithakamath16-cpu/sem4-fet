@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 <title>Student Course Selection</title>
@@ -50,13 +51,17 @@ select{
     font-size:17px;
     border-radius:8px;
     border:1px solid gray;
-    outline:none;
 }
 
 label{
     font-size:18px;
     font-weight:bold;
     color:#444;
+}
+
+a{
+    display:block;
+    margin-top:20px;
 }
 
 </style>
@@ -113,38 +118,45 @@ label{
 
 </select>
 
+<a href="https://nikhithakamath16-cpu.github.io/sem4-fet">
+Go to Home page
+</a>
+
 </div>
 
 <script>
 
-let dept = document.getElementById("department");
+document.addEventListener("DOMContentLoaded", function(){
 
-dept.addEventListener("change", function(){
+    let dept = document.getElementById("department");
 
-    let value = dept.value;
+    dept.addEventListener("change", function(){
 
-    let box = document.getElementById("box");
+        let value = dept.value;
 
-    box.innerHTML = value;
+        let box = document.getElementById("box");
 
-    box.style.background = "seagreen";
+        box.innerHTML = value;
+
+        box.style.background = "seagreen";
+
+    });
+
+    let year = document.getElementById("year");
+
+    year.addEventListener("change", function(){
+
+        let value = year.value;
+
+        let box = document.getElementById("box");
+
+        box.innerHTML = value;
+
+        box.style.background = "crimson";
+
+    });
 
 });
-
-let year = document.getElementById("year");
-
-year.addEventListener("change", function(){
-
-    let value = year.value;
-
-    let box = document.getElementById("box");
-
-    box.innerHTML = value;
-
-    box.style.background = "crimson";
-
-});
-     <a href="https://nikhithakamath16-cpu.github.io/sem4-fet">Go to Home page</a>
 
 </script>
 
