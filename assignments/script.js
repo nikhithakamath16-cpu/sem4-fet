@@ -38,8 +38,7 @@ function registerCourse(){
 
     if(courses.length === 0){
 
-        result =
-            "No Courses Registered";
+        result = "No Courses Registered";
 
     }
 
