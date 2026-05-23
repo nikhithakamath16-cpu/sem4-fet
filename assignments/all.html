@@ -29,14 +29,26 @@
     border-radius:15px;
     box-shadow:0px 4px 12px gray;
 }
-    
+    input{
+      background-color:lightyellow;
+      padding:20px;
+      margin:10;
+      width:200px;
+
+    }
+    input::placeholder
+    {
+      color:red
+    }
   </style>
   <body>
     <div class="container">
     <h1>Rectangle Calculator</h1>
-      <input type="number" id="length" placeholder="Enter length">
-      <input type="number" id="breadth" placeholder="Enter breadth">
+      <input type="number" id="length" placeholder="Enter length:">
+      <input type="number" id="breadth" placeholder="Enter breadth:">
+      <br>
       <button onclick="findArea()">Calculate area</button>
+      <br>
       <button onclick="findcircumference()">Calculate circumference</button>
       <h3 id="result"></h3>
     </div>
@@ -52,7 +64,7 @@
       {
         let length=Number(document.getElementById("length").value);
         let breadth=Number(document.getElementById("breadth").value);
-        let cir=(2*(length+breadth));
+        let cir=2*(length + breadth);
         document.getElementById("result").innerHTML="Circumference:"+cir;
       }
     </script>
