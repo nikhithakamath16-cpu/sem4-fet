@@ -36,7 +36,25 @@
     <h1>Rectangle Calculator</h1>
       <input type="number" id="length" placeholder="Enter length">
       <input type="number" id="breadth" placeholder="Enter breadth">
-      <button onclick=
+      <button onclick="findArea()">Calculate area</button>
+      <button onclick="findcircumference()">Calculate circumference</button>
+      <h3 id="result"></h3>
+    </div>
+    <script>
+      function findArea()
+      {
+        let length=document.getElementById("length").value;
+        let breadth=document.getElementById("breadth").value;
+        let area=length*breadth;
+        document.getElementById("result").innerHTML="Area:"+area;
+      }
+      function findcircumference()
+      {
+        let length=document.getElementById("length").value;
+        let breadth=document.getElementById("breadth").value;
+        let cir=2*(length+breadth);
+        document.getElementById("result").innerHTML="Circumference
+    </script>
     
   </body>
 </html>
