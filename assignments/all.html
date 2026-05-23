@@ -43,15 +43,15 @@
     <script>
       function findArea()
       {
-        let length=document.getElementById("length").value;
-        let breadth=document.getElementById("breadth").value;
+        let length=Number(document.getElementById("length").value);
+        let breadth=Number(document.getElementById("breadth").value);
         let area=length*breadth;
         document.getElementById("result").innerHTML="Area:"+area;
       }
       function findcircumference()
       {
-        let length=document.getElementById("length").value;
-        let breadth=document.getElementById("breadth").value;
+        let length=Number(document.getElementById("length").value);
+        let breadth=Number(document.getElementById("breadth").value);
         let cir=(2*(length+breadth));
         document.getElementById("result").innerHTML="Circumference:"+cir;
       }
